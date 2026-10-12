@@ -19,20 +19,21 @@ public class PatientTests {
     @Autowired
     private PatientService patientService;
 
-    @Test
-    public void testPatientRepository() {
-        List<Patient> patientList = patientRepository.findAll();
-        System.out.println(patientList);
-
-        Patient patient = new Patient();
-//        patientService.addPatient(patient);
-    }
+//    @Test
+//    public void testPatientRepository() {
+//        List<Patient> patientList = patientRepository.findAll();
+//        System.out.println(patientList);
+//
+//        Patient patient = new Patient();
+////        patientService.addPatient(patient);
+//    }
 
     @Test
     public void testTransactionMethods() {
-        List<Patient> patient = patientRepository.findByBirthDateOrEmail(LocalDate.of(1995,5,12), "michael.brown@gmail.com");
 
-        System.out.println(patient);
+        List<Patient> patients = patientRepository.findByNameContaining("son");
+
+        System.out.println(patients);
     }
 
 }
